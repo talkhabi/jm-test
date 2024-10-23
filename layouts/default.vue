@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <AppHeader />
+  <AppHeader />
+  <main class="app-main">
     <NuxtPage />
-  </div>
+  </main>
 </template>
 
 <script setup>
 import AppHeader from '@/components/AppHeader.vue';
 </script>
+
+<style lang="scss" scoped>
+.app-main {
+  padding: 48px 0;
+}
+</style>
