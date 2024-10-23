@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Jm-Icons';
+  src:  url('fonts/Jm-Icons.eot?fx0kmm');
+  src:  url('fonts/Jm-Icons.eot?fx0kmm#iefix') format('embedded-opentype'),
+    url('fonts/Jm-Icons.ttf?fx0kmm') format('truetype'),
+    url('fonts/Jm-Icons.woff?fx0kmm') format('woff'),
+    url('fonts/Jm-Icons.svg?fx0kmm#Jm-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Jm-Icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-angle-up:before {
+  content: "\e916";
+}
+.ic-angle-down:before {
+  content: "\e917";
+}
+.ic-angle-right:before {
+  content: "\e918";
+}
+.ic-angle-left:before {
+  content: "\e919";
+}
+.ic-left:before {
+  content: "\e91a";
+}
+.ic-right:before {
+  content: "\e91b";
+}
+.ic-filter:before {
+  content: "\e947";
+}
+.ic-filter-rounded:before {
+  content: "\e947";
+}
+.ic-filter-fill:before {
+  content: "\e948";
+}
+.ic-light-mode:before {
+  content: "\e94f";
+}
+.ic-light-mode-fill:before {
+  content: "\e950";
+}
+.ic-dark-mode:before {
+  content: "\e951";
+}
+.ic-dark-mode-fill:before {
+  content: "\e952";
+}
+.ic-sort-down:before {
+  content: "\e9c4";
+}
+.ic-sort-up:before {
+  content: "\e9c5";
+}
+.ic-sort:before {
+  content: "\e9c5";
+}
+.ic-search:before {
+  content: "\e9fd";
+}
+.ic-search-fill:before {
+  content: "\e9fd";
+}
