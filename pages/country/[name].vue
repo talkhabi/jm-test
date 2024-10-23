@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <JmContainer>
     <DataStatusWrapper
       :error="error"
       :status="status"
@@ -11,12 +11,13 @@
       <p>Population: {{ country.population }}</p>
       <p>Region: {{ country.region }}</p>
     </DataStatusWrapper>
-  </div>
+  </JmContainer>
 </template>
 
 <script setup lang="ts">
 import type {Country} from "@/types/country";
 import {getCountryByName} from "@/services/api";
+import JmContainer from "@/components/ui/JmContainer";
 import DataStatusWrapper from "@/components/DataStatusWrapper";
 
 const route = useRoute();
