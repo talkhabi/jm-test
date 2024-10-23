@@ -6,11 +6,13 @@
   --text-primary: #000000;
   --text-secondary: #6c757d;
   --border-color: #e9ecef;
-  --search-bg: #ffffff;
-  --dropdown-bg: #ffffff;
+  --input-bg: #ffffff;
 
   // Shadow
   --shadow-color: rgba(0, 0, 0, 0.2);
+
+  // Sizes
+  --input-height: 56px;
 }
 
 [data-theme="dark"] {
@@ -20,6 +22,5 @@
   --text-primary: #ffffff;
   --text-secondary: #a0a8b1;
   --border-color: #404750;
-  --search-bg: #404750;
-  --dropdown-bg: #2d3238;
+  --input-bg: #404750;
 }
