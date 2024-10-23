@@ -1,8 +1,8 @@
 <template>
   <JmContainer class="home">
     <div class="home__filters">
-      <SearchBar class="home__filters-search" v-model="searchValue" />
-      <RegionFilter class="home__filters-region" v-model="regionFilter" />
+      <SearchBar class="home__filters-search" v-model="searchQuery" />
+      <RegionFilter class="home__filters-region" v-model="selectedRegion" />
     </div>
 
     <DataStatusWrapper
@@ -11,14 +11,16 @@
       :refresh="refresh"
       :has-data="countries?.length > 0"
     >
-      SEARCH: {{ searchValue }}
-      <CountryCard v-for="country in countries" :key="country.name" :country="country"/>
+      <CountryCard v-for="country in filteredCountries" :key="country.name" :country="country"/>
     </DataStatusWrapper>
   </JmContainer>
 </template>
 
 <script setup lang="ts">
+import Fuse from 'fuse.js'
 import { getCountries } from "@/services/api";
+import { useQuerySync } from "@/composables/useQuerySync";
+
 import SearchBar from "@/components/SearchBar";
 import CountryCard from "@/components/CountryCard";
 import RegionFilter from "@/components/RegionFilter";
@@ -39,8 +41,29 @@ useHead({
   title: 'Journey Mentor',
 });
 
-const regionFilter = ref('')
-const searchValue = ref('')
+const searchQuery = useQuerySync('name', '')
+const selectedRegion = useQuerySync('region', '')
+
+const fuse = computed(() => {
+  return new Fuse(countries.value || [], {
+    keys: ['name.common'],
+    threshold: 0.5
+  })
+})
+
+const filteredCountries = computed(() => {
+  let result = countries.value || []
+
+  if (searchQuery.value) {
+    result = fuse.value.search(searchQuery.value).map(({ item }) => item)
+  }
+
+  if (selectedRegion.value) {
+    result = result.filter(country => country.region === selectedRegion.value)
+  }
+
+  return result
+})
 
 </script>
 
@@ -56,6 +79,5 @@ const searchValue = ref('')
   &__filters-search {
     min-width: 37%;
   }
-
 }
 </style>

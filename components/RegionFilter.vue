@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import JmSelect from "@/components/ui/JmSelect.vue";
 
-defineProps({
+const props = defineProps({
   modelValue: String,
 })
 
@@ -22,13 +22,21 @@ const onChange = (option: string) => {
   emit('update:modelValue', option)
 }
 
-const options = [
-  { label: 'Africa', value: 'Africa' },
-  { label: 'Americas', value: 'Americas' },
-  { label: 'Asia', value: 'Asia' },
-  { label: 'Europe', value: 'Europe' },
-  { label: 'Oceania', value: 'Oceania' },
-]
+const options = computed(() => {
+  const options = [
+    { label: 'Africa', value: 'Africa' },
+    { label: 'Americas', value: 'Americas' },
+    { label: 'Asia', value: 'Asia' },
+    { label: 'Europe', value: 'Europe' },
+    { label: 'Oceania', value: 'Oceania' },
+  ]
+
+  if (props.modelValue) {
+    options.unshift({ label: 'all', value: '' })
+  }
+
+  return options
+})
 </script>
 
 <style lang="scss" scoped></style>

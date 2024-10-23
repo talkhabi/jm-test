@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const UPDATE_THRESHOLD = 700 // ms
+const UPDATE_THRESHOLD = 500 // ms
 
 import JmInput from "@/components/ui/JmInput.vue";
 
