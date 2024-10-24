@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
   css: [
     '@/assets/icons/style.css',
-    '@/assets/styles/_variables.scss',
+    '@/assets/styles/variables.css',
     '@/assets/styles/main.scss',
   ],
 

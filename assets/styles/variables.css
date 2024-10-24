@@ -1,5 +1,4 @@
 :root {
-  // Colors
   --primary-bg: #ffffff;
   --secondary-bg: #f8f9fa;
   --card-bg: #ffffff;
@@ -9,10 +8,8 @@
   --input-bg: #ffffff;
   --button-bg: #ffffff;
 
-  // Shadow
   --shadow-color: rgba(0, 0, 0, 0.2);
 
-  // Sizes
   --input-height: 56px;
 }
 
