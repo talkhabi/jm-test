@@ -8,11 +8,22 @@ export interface CountryName {
   common: string;
   official: string;
   nativeName: {
-    eng: {
+    [languageCode: string]: {
       official: string;
       common: string;
     };
   };
+}
+
+export interface Currencies {
+  [currencyCode: string]: {
+    name: string;
+    symbol: string;
+  };
+}
+
+export interface Languages {
+  [lanCode: string]: string;
 }
 
 export interface Country {
@@ -20,5 +31,10 @@ export interface Country {
   name: CountryName;
   capital: string[];
   region: string;
+  subregion: string;
   population: number;
+  currencies: Currencies[];
+  tld: string[];
+  borders: string[];
+  languages: Languages[];
 }
