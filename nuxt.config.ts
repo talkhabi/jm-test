@@ -12,4 +12,14 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/image'],
+
+  hooks: {
+    'pages:extend'(pages) {
+      pages.push({
+        name: 'country-code',
+        path: '/country/code/:code',
+        file: '~/pages/country/[name].vue'
+      })
+    }
+  }
 })

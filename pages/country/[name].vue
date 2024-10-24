@@ -84,7 +84,8 @@
 
 <script setup lang="ts">
 import type { Country } from "@/types/country";
-import { getCountryByName } from "@/services/api";
+import { getCountryByCode, getCountryByName } from "@/services/api";
+
 import JmContainer from "@/components/ui/JmContainer";
 import JmLinkButton from "@/components/ui/JmLinkButton";
 import DataStatusWrapper from "@/components/DataStatusWrapper";
@@ -92,10 +93,11 @@ import DataStatusWrapper from "@/components/DataStatusWrapper";
 const route = useRoute();
 
 const name = route.params?.name
+const code = route.params?.code
 
 const { data, status, error, refresh } = await useAsyncData(
-  `country-${name}`,
-  () => getCountryByName(name as string)
+  `country-${name ??  code}`,
+  () => name ? getCountryByName(name as string) : getCountryByCode(code as string)
 )
 
 const country = computed<Country>(() => data?.value?.[0] as Country);
