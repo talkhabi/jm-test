@@ -1,75 +1,51 @@
-# Nuxt Minimal Starter
+# Journey Mentor REST Countries API
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Demo & Development Links
+- Live Demo: [https://talkhabi.liara.run/](https://talkhabi.liara.run/)
+- CodeSandbox: [https://codesandbox.io/p/github/talkhabi/jm-test/master?workspaceId=9ce0c9ce-c93a-47c9-a2ae-25fa107381bf](https://codesandbox.io/p/github/talkhabi/jm-test/master?workspaceId=9ce0c9ce-c93a-47c9-a2ae-25fa107381bf)
 
-## Setup
+## Technologies Used
+- Nuxt 3
+- Axios
+- BEM Methodology
+- Fuse.js
+- Vue
+- And more...
 
-Make sure to install dependencies:
+## Technical Notes
 
+### Filtering and Sorting
+While it would have been possible to use API requests for filtering and sorting items on the main page, this approach was deemed unnecessary since all countries need to be loaded initially anyway.
+
+### Potential Improvements
+1. **Performance Enhancement**
+- Implementation of virtual scroll for better performance
+
+2. **Dark Mode**
+- Currently using localStorage for dark mode state management
+- Could be alternatively implemented using cookies
+
+3. **Development Environment**
+- Recommended to configure ESLint + Prettier for better development experience
+
+4. **Additional Improvements**
+- Further improvements could be considered but were skipped due to time constraints
+
+## Installation & Running
+
+### Prerequisites
+- Node.js version 20 or higher
+
+### Setup Instructions
 ```bash
-# npm
-npm install
+# Install dependencies
+npm ci
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Development server
 npm run dev
 
-# pnpm
-pnpm dev
+# OR
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
+# Production build
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
