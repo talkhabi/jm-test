@@ -2,7 +2,6 @@
 
 ## Demo & Development Links
 - Live Demo: [https://talkhabi.liara.run/](https://talkhabi.liara.run/)
-- CodeSandbox: [https://codesandbox.io/p/github/talkhabi/jm-test/master?workspaceId=9ce0c9ce-c93a-47c9-a2ae-25fa107381bf](https://codesandbox.io/p/github/talkhabi/jm-test/master?workspaceId=9ce0c9ce-c93a-47c9-a2ae-25fa107381bf)
 
 ## Technologies Used
 - Nuxt 3
