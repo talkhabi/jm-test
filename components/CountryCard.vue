@@ -1,7 +1,11 @@
 <template>
   <NuxtLink :to="`/country/${country?.name.common}`" class="country">
     <div class="country__img">
-      <img :src="country?.flags.svg" :alt="country?.name.common" />
+      <NuxtImg
+        :src="country?.flags.svg"
+        :alt="country?.name.common"
+        loading="lazy"
+      />
     </div>
     <div class="country__body">
       <h3 class="country__name">{{ country?.name.common }}</h3>
