@@ -9,9 +9,16 @@
       :error="error"
       :status="status"
       :refresh="refresh"
-      :has-data="countries?.length > 0"
+      :has-data="filteredCountries?.length > 0"
     >
-      <CountryCard v-for="country in filteredCountries" :key="country.name" :country="country"/>
+      <div class="home__grid">
+        <CountryCard
+          v-for="country in filteredCountries"
+          :key="country.name"
+          :country="country"
+          class="home__grid-item"
+        />
+      </div>
     </DataStatusWrapper>
   </JmContainer>
 </template>
@@ -78,6 +85,16 @@ const filteredCountries = computed(() => {
 
   &__filters-search {
     min-width: 37%;
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__grid-item {
+    margin-bottom: 74px;
   }
 }
 </style>
