@@ -1,8 +1,13 @@
 <template>
   <div class="jm-select" tabindex="0" @blur="close">
     <div class="jm-select__input" @click="toggleIsOpen">
+      <i
+        v-if="prependIcon"
+        :class="prependIcon"
+        class="jm-select__icon-prepend"
+      />
       <span>{{ selectedOption?.label ?? placeholder }}</span>
-      <i class="ic-angle-down" />
+      <i class="jm-select__icon-append ic-angle-down" />
     </div>
 
     <div v-if="isOpen" class="jm-select__dropdown">
@@ -28,6 +33,7 @@ const props = defineProps({
   options: Array as PropType<Option[]>,
   modelValue: String,
   placeholder: String,
+  prependIcon: String,
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -55,6 +61,14 @@ const toggleIsOpen = () => isOpen.value = !isOpen.value
   color: var(--text-primary);
   min-width: 200px;
 
+  &__icon-prepend {
+    margin-right: 15px;
+  }
+
+  &__icon-append {
+    margin-left: 30px;
+  }
+
   &__input {
     height: var(--input-height);
     line-height: var(--input-height);
@@ -69,8 +83,8 @@ const toggleIsOpen = () => isOpen.value = !isOpen.value
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
     cursor: pointer;
+    white-space: nowrap;
   }
 
   &__dropdown {
