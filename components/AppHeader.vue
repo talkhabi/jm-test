@@ -36,6 +36,10 @@ const { isDark, toggleDarkMode } = useDarkMode()
   background-color: var(--primary-bg);
   transition: background-color 0.3s ease;
 
+  @media (max-width: 480px) {
+    padding: 28px 0;
+  }
+
   &__container {
     display: flex;
     align-items: center;
@@ -45,6 +49,11 @@ const { isDark, toggleDarkMode } = useDarkMode()
   &__title {
     font-size: 24px;
     margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
 
   &__toggle-dark-mode {
@@ -59,10 +68,24 @@ const { isDark, toggleDarkMode } = useDarkMode()
     height: 24px;
     white-space: nowrap;
 
+    @media (max-width: 480px) {
+      font-size: 12px;
+      width: auto;
+    }
+
+    span {
+      transform: translateY(15%);
+      display: inline-block;
+    }
+
     i {
       margin-right: 8px;
       font-size: 24px;
       display: inline-block;
+
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
     }
   }
 }

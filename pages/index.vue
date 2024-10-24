@@ -81,16 +81,26 @@ const filteredCountries = computed(() => {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 48px;
+    flex-wrap: wrap;
   }
 
   &__filters-search {
     min-width: 37%;
+
+    @media (max-width: 540px) {
+      width: 100%;
+      margin-bottom: 40px;
+    }
   }
 
   &__grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media (max-width: 480px) {
+      justify-content: center;
+    }
   }
 
   &__grid-item {

@@ -12,5 +12,9 @@ import AppHeader from '@/components/AppHeader.vue';
 <style lang="scss" scoped>
 .app-main {
   padding: 48px 0;
+
+  @media (max-width: 480px) {
+    padding: 24px 0;
+  }
 }
 </style>
