@@ -26,7 +26,7 @@ const onInput = (value: string) => {
   clearTimeout(changeTimeout.value)
 
   changeTimeout.value = setTimeout(() => {
-    emit('update:modelValue', value)
+    emit('update:modelValue', value.trim())
   }, UPDATE_THRESHOLD)
 }
 </script>
