@@ -55,6 +55,8 @@ const onInput = (event: InputEvent) => {
     width: 100%;
     min-width: unset;
     font-size: 14px;
+    color: var(--text-primary);
+    background-color: transparent;
   }
 
   &__prepend {

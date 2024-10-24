@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
-@use "@/assets/styles/variables" as *;
-@use "@/assets/styles/main" as *;
+@use "@/assets/icons/style.css";
+@use "@/assets/styles/variables";
+@use "@/assets/styles/main";
 </style>
