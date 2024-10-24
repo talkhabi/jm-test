@@ -81,6 +81,7 @@ const toggleIsOpen = () => isOpen.value = !isOpen.value
     padding: 10px 0;
     min-width: 100%;
     border-radius: 4px;
+    z-index: 100;
     background-color: var(--input-bg);
     box-shadow: 0 0 4px -1px var(--shadow-color);
   }
